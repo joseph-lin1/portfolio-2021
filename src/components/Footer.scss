@@ -1,0 +1,91 @@
+.footer{
+    background: $black;
+}
+
+.footer-top{
+    height: 45px;
+    width: 100%;
+    @include media-query (small-up){
+        height: 80px;
+    }
+    @include media-query (large-up){
+        height: 120px;
+    }
+    svg{
+        height: 100%;
+        width: 100%;
+    }
+}
+.footer-link__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-subtext{
+    color: $white;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.footer-inner{
+    position: relative;
+    padding: 70px 20px 30px;
+}
+
+.footer-link,
+.footer-up-trigger{
+    margin: 0 15px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: $primaryColor;
+    transition-duration: 0.3s;
+    border: 2px solid $primaryColor;
+    @include media-query (medium-up){
+        &:hover{
+            border: 2px solid $white;
+            background: $black;
+            color: $white;
+        }
+    }
+    &:focus{
+        border: 2px solid $white;
+        outline: 0;
+        background: $black;
+        color: $white;
+    }
+    svg{
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.footer-up-trigger{
+    position: absolute;
+    right: 20px;
+    top: 0;
+    transition-duration: 0.3s;
+    width: 45px;
+    @include media-query (medium-up){
+        right: 40px;
+    }
+}
+
+.footer-copyright-text{
+    text-align: center;
+    color: $white;
+    margin-top: 30px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.footer-copyright-text__year{
+    color: $primaryColor;
+    font-weight: 500;
+    font-size: 12px;
+}

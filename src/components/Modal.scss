@@ -1,0 +1,121 @@
+.modal-container{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom: 0;
+    z-index: 10;
+    &.modal-container--show{
+        display: block;
+    }
+}
+.modal{
+    border-radius: 4px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background: $white;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: scroll;
+    max-width: 700px;
+    z-index: 1;
+    @include media-query (small-up){
+        border-radius: 0;
+        width: 94vw;
+        height: 94vh;
+    }
+    @include media-query (medium-up){
+        width: 85vw;
+        height: 85vh;
+    }
+    // Slick 
+    .slick-prev,
+    .slick-next{
+        top: 50%;
+        position: absolute;   
+        bottom: 0;
+        z-index: 1;
+        width: 25px;
+        height: 25px;
+        background: $primaryColor;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    .slick-prev{
+        left: -10px;
+    }
+    .slick-next{
+        right: -10px;
+        left: initial;
+    }
+}
+#modal-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+.modal-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 30px 15px;
+    @include media-query (small-up){
+        padding: 30px;
+    }
+}
+.modal-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    padding: 6px 8px;
+    background: $primaryColor;
+    border: 0;
+    svg{
+        width: 10px;
+        height: 10px;
+        fill: $white;
+    }
+}
+.modal-image__container{
+    position: relative;
+    width: 100%;
+    font-size: 0;
+}
+.modal-image__each-container{
+    border: 2px solid $gray;
+}
+.modal-image{
+    width: 100%;
+}
+.modal-info__tech{
+    border-bottom: 1px solid $gray;
+    color: $black;
+    font-size: 12px;
+    padding: 10px 0;
+    @include media-query (medium-up){
+        font-size: 14px;
+    }
+}
+.modal-info__tech-label{
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 8px;
+}
+.modal-info__title{
+    height: 45px;
+    padding: 15px 0 0;
+}
+.modal-info__description{
+    padding: 10px 0 15px;
+    line-height: 1.4;
+    &:last-child{
+        padding-top: 0;
+    }
+}

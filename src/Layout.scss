@@ -1,0 +1,161 @@
+// =============== Variables ===============
+// Grid Widths
+$grid-small: 480px;
+$grid-medium: 768px;
+$grid-large: 990px;
+
+// Color Variables
+$primaryColor: #fc3565;
+$black: #1B242F;
+$white: #fff;
+$graylight: #f5f5f5;
+$graydark: #282931;
+$gray: #efefef;
+
+// =============== Typography ===============
+// @font-face {
+//     font-family: 'Yantramanav';
+//     src: local('Yantramanav'), 
+//         url(/font/Yantramanav-Regular.woff) format('woff');
+// }
+
+// @font-face {
+//     font-family: 'Yantramanav';
+//     src: local('Yantramanav'), 
+//         url(/font/Yantramanav-Medium.woff) format('woff');
+//     font-weight: 500;
+// }
+
+// @font-face {
+//     font-family: 'Yantramanav';
+//     src: local('Yantramanav'), 
+//         url(/font/Yantramanav-Bold.woff) format('woff');
+//     font-weight: bold;
+// }
+
+// =============== Mixins ===============
+// Mixins for media query
+@mixin media-query($width) {
+    @if $width == small-down {
+        @media (max-width: calc(#{$grid-small} - 1px)) { @content; }
+    } @else if $width == small-up {
+        @media (min-width: $grid-small) { @content; }
+    } @else if $width == medium-down {
+        @media (max-width: calc(#{$grid-medium} - 1px)) { @content; }
+    } @else if $width == medium-up {
+        @media (min-width: $grid-medium) { @content; }
+    } @else if $width == large-down {
+        @media (max-width: calc(#{$grid-large} - 1px)) { @content; }
+    } @else if $width == large-up {
+        @media (min-width: $grid-large) { @content; }
+    }
+}
+
+// =============== Global CSS ===============
+
+*{
+    box-sizing: border-box;
+    letter-spacing: 0.04em;
+}
+body,
+html{
+    // font-family: Yantramanav, sans-serif;
+    color: $graydark;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label{
+    margin: 0;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    @include media-query (medium-up){
+        font-size: 36px;
+    }
+}
+
+h2 {
+    font-size: 18px;
+    @include media-query (medium-up){
+        font-size: 24px;
+    }
+}
+
+h3 {
+    font-size: 16px;
+    @include media-query (medium-up){
+        font-size: 18px;
+    }
+}
+
+p,
+span {
+    font-size: 14px;
+}
+
+a,
+button{
+    color: $graydark;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    @include media-query (medium-up){
+        &:hover{
+            color: $primaryColor;
+        }
+    }
+    &:focus{
+        outline: 0;
+        color: $primaryColor;
+    }
+}
+// =============== Button Links ===============
+.btn{
+    background: none;
+    border: 2px solid $white;
+    color: $white;
+    border-radius: 0;
+    padding: 7px 18px;
+    font-weight: 500;
+    transition-duration: 0.3s;
+    @include media-query (medium-up){
+        &:hover{
+            border: 2px solid $white;
+            color: $primaryColor;
+        }
+    }
+    &:focus{
+        border: 2px solid $white;
+        color: $primaryColor;
+    }
+}
+
+.btn--secondary{
+    background: $graydark;
+    border: 2px solid $graydark;
+    color: $white;
+    border-radius: 0;
+    padding: 7px 18px;
+    font-weight: 500;
+    transition-duration: 0.3s;
+    @include media-query (medium-up){
+        &:hover{
+            background: none;
+            border: 2px solid $white;
+            color: $white;
+        }
+    }
+    &:focus{
+        background: none;
+        border: 2px solid $white;
+        color: $white;
+    }
+}

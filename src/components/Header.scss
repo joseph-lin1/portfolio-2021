@@ -1,0 +1,42 @@
+.nav{
+    background: $graydark;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    z-index: 5;
+    @include media-query (medium-up){
+        padding: 10px 40px;
+    }
+    &.nav--fixed{
+        position: fixed;
+        top: 0;
+        right:0;
+        left: 0;
+    }
+}
+.nav-logo{
+    font-size: 24px;
+    font-weight: 500;
+    color: $white;
+}
+.nav-linklist{
+    display: flex;
+    align-items: center;
+}
+.nav-linklist__link{
+    color: $white;
+    background: none;
+    border: 0;
+    padding: 0 5px;
+    font-size: 12px;
+    &:last-child(){
+        padding-right: 0;
+    }
+    @include media-query (medium-up){
+        padding: 0 10px;
+    }
+    &.active{
+        color: $primaryColor;
+    }
+}

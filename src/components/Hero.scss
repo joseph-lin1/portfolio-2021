@@ -1,0 +1,48 @@
+.hero{
+    position: relative;
+    background: $graydark;
+    height: calc(100vh - 52px);
+    & > div:nth-child(1) {
+        height: 100%;
+        font-size: 0;
+    }
+}
+.hero-text{
+    color: $white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    max-width: 425px;
+    @include media-query (large-up){
+        max-width: 525px;
+    }
+}
+.hero-text__title{
+    font-size: 28px;
+    @include media-query (medium-up){
+        font-size: 36px;
+    }
+    @include media-query (large-up){
+        font-size: 42px;
+    }
+}
+.hero-text__title-color{
+    color: $primaryColor;
+    padding-left: 7px;
+    font-weight: bold;
+    font-size: 28px;
+    @include media-query (medium-up){
+        font-size: 36px;
+    }
+    @include media-query (large-up){
+        font-size: 48px;
+    }
+}
+.hero-text__hero-btn{
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 25px;
+}
