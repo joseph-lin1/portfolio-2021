@@ -40,6 +40,7 @@ class About extends React.Component{
 
                     <div className="about-left">
                         <div className="about-left__details-container">
+                            <h1>test me</h1>
                             <div className="about-left__details-image">
                             </div>
                             <div className="about-left__details-text-container">
