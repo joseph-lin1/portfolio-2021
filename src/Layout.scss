@@ -12,27 +12,6 @@ $graylight: #f5f5f5;
 $graydark: #282931;
 $gray: #efefef;
 
-// =============== Typography ===============
-// @font-face {
-//     font-family: 'Yantramanav';
-//     src: local('Yantramanav'), 
-//         url(/font/Yantramanav-Regular.woff) format('woff');
-// }
-
-// @font-face {
-//     font-family: 'Yantramanav';
-//     src: local('Yantramanav'), 
-//         url(/font/Yantramanav-Medium.woff) format('woff');
-//     font-weight: 500;
-// }
-
-// @font-face {
-//     font-family: 'Yantramanav';
-//     src: local('Yantramanav'), 
-//         url(/font/Yantramanav-Bold.woff) format('woff');
-//     font-weight: bold;
-// }
-
 // =============== Mixins ===============
 // Mixins for media query
 @mixin media-query($width) {
@@ -59,7 +38,7 @@ $gray: #efefef;
 }
 body,
 html{
-    // font-family: Yantramanav, sans-serif;
+    font-family: Arial, sans-serif;
     color: $graydark;
 }
 
